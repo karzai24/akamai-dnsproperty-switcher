@@ -44,7 +44,7 @@ headers = {'Content-Type': 'application/json'}
 site_name = sys.argv[1]
 my_action = sys.argv[2]
 
-
+## Get the DataCenter ID from datacenter and fill here.
 def switch_sites(site):
     switcher = {
         "London": 0000,
