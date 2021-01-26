@@ -3,8 +3,8 @@
 # Version: 1.0                                                                                    #
 # Date: January 2, 2021                                                                           #
 # Author: Mohammad Karzai (karzai24.mk@gmail.com)                                                 #
-# # Usage: python add-remove-site.py siteshortname pull_site/add_site                             #
-# # Example: python add-remove-site.py ANO pull_site                                              #
+# # Usage: python add-remove-site.py sitename pull_site/add_site                                  #
+# # Example: python main.py Boston pull_site                                                      #
 # # 1. Get list of properties from Akamai                                                         #
 # # 2. Get config for each property and return json object                                        #
 # # 3. Read the json and append the field we would like to change. By DataCenter ID               #
@@ -52,7 +52,7 @@ def switch_sites(site):
         "Boston": 2222,
         "Oregon": 3333
     }
-    return switcher.get(site, "Invalid DataCenter Shortname")
+    return switcher.get(site, "Invalid DataCenter Name")
 
 
 def getPropertiesList():
