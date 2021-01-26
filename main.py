@@ -3,7 +3,7 @@
 # Version: 1.0                                                                                    #
 # Date: January 2, 2021                                                                           #
 # Author: Mohammad Karzai (karzai24.mk@gmail.com)                                                 #
-# # Usage: python add-remove-site.py sitename pull_site/add_site                                  #
+# # Usage: python main.py sitename pull_site/add_site                                             #
 # # Example: python main.py Boston pull_site                                                      #
 # # 1. Get list of properties from Akamai                                                         #
 # # 2. Get config for each property and return json object                                        #
@@ -47,10 +47,10 @@ my_action = sys.argv[2]
 ## Get the DataCenter ID from datacenter and fill here.
 def switch_sites(site):
     switcher = {
-        "London": 0000,
-        "Boise": 1111,
-        "Boston": 2222,
-        "Oregon": 3333
+        "London": 1111,
+        "Boise": 2222,
+        "Boston": 3333,
+        "Oregon": 4444
     }
     return switcher.get(site, "Invalid DataCenter Name")
 
@@ -61,6 +61,7 @@ def getPropertiesList():
     s.auth = my_Auth
     r = s.get(reqURL)
     response_content = json.loads(r.content)
+    logging.info(r.headers)
     my_prop_list = []
     for item in response_content["items"]:
         if item["name"] != "NULL":
@@ -78,9 +79,7 @@ def saveAkaInfo2Json():
         s.auth = my_Auth
         r = s.get(reqURL)
         my_json_list.append(r.content)
-        logging.basicConfig(filename='test-py.log', filemode='a',
-                            format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s', datefmt='%H:%M:%S',
-                            level=logging.DEBUG)
+        logging.info(r.headers)
     return my_json_list
 
 
