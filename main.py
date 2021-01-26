@@ -98,11 +98,12 @@ def updateAkaJson():
         s = requests.Session()
         s.auth = my_Auth
         r = s.put(reqURL, data=json.dumps(prop), headers=headers)
+        logging.info(r.headers)
         
 
 
 if __name__ == '__main__':
     logging.basicConfig(filename='my-dns.log', filemode='a', format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s', level=10)
     updateAkaJson()
-    logging.info(r.headers)
+    
     
