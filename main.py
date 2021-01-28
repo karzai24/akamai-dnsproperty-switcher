@@ -100,7 +100,6 @@ def updateAkaJson():
         logging.info(r.headers)
         
 
-
 if __name__ == '__main__':
     logging.basicConfig(filename='my-dns.log', filemode='a', format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s', level=10)
     updateAkaJson()
