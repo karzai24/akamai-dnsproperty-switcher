@@ -4,6 +4,7 @@ Get your datacenter ID from Akamai and replace entries in switch statement on li
 
 
 Usage: python main.py sitename pull_site/add_site
+
 Example: python main.py Boston pull_site
 1. Get list of properties from Akamai
 2. Get config for each property and return json object
