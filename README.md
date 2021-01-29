@@ -1,6 +1,8 @@
 # akamai-dnsproperty-switcher
 Script that will turn on and off entire datacenter from within all properties inside Akamai.
 Get your datacenter ID from Akamai and replace entries in switch statement on line 48.
+
+
 Usage: python main.py sitename pull_site/add_site
 Example: python main.py Boston pull_site
 1. Get list of properties from Akamai
